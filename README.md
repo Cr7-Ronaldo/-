@@ -3,6 +3,7 @@
 > Spring Framework 기반의 중고 물품 거래 게시판 프로젝트입니다.
 ![{233252F2-FC30-4467-9B8D-1957CE8706C0}](https://github.com/user-attachments/assets/84fc74f7-7ce6-41aa-a168-fbeb6a3d0696)
 > ![{CD689DA1-F61E-4BF9-AF81-C4474975A243}](https://github.com/user-attachments/assets/eee0d5e1-5059-49c2-943d-ec7307971007)
+![{BDAE6D99-2E3F-40B6-B9BF-1DB948C6026D}](https://github.com/user-attachments/assets/f6985605-56ed-4f94-b98f-d3ef3b889d55)
 
 ![{E39126B6-5EF3-4D38-BFEE-9B4CE225A293}](https://github.com/user-attachments/assets/a8ddd2d5-48d7-4197-8d15-41f9f3cea242)
 > ![{2BE9B2A4-D298-4E7D-B281-9F3A27294EC4}](https://github.com/user-attachments/assets/f7d63fee-53ae-4d37-8a1d-4031658d7567)
