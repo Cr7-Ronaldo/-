@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sample.mapper.ReplyMapper">
+
+  <!-- 댓글 등록 -->
+  <insert id="insert">
+    INSERT INTO pd_reply (rno, boardid, reply, replyer)
+    VALUES (seq_reply.nextval, #{boardid}, #{reply}, #{replyer})
+  </insert>
+
+  <!-- 단건 조회 -->
+  <select id="read" resultType="org.sample.domain.ReplyVO">
+    SELECT * FROM pd_reply WHERE rno = #{rno}
+  </select>
+
+  <!-- 댓글 삭제 -->
+  <delete id="delete">
+    DELETE FROM pd_reply WHERE rno = #{rno}
+  </delete>
+
+  <!-- 댓글 수정 -->
+  <update id="update">
+    UPDATE pd_reply
+    SET reply = #{reply},
+        replyer = #{replyer},
+        updateDate = SYSDATE
+    WHERE rno = #{rno}
+  </update>
+
+  <!-- 페이징 리스트 -->
+ <select id="getListWithPaging" resultType="org.sample.domain.ReplyVO">
+  <![CDATA[
+    SELECT rno, boardid, reply, replyer, replyDate, updateDate
+    FROM (
+      SELECT rno, boardid, reply, replyer, replyDate, updateDate, ROWNUM rn
+      FROM (
+        SELECT rno, boardid, reply, replyer, replyDate, updateDate
+        FROM pd_reply
+        WHERE boardid = #{boardid}
+        ORDER BY rno DESC
+      )
+      WHERE ROWNUM <= #{cri.pageNum} * #{cri.amount}
+    )
+    WHERE rn > (#{cri.pageNum} - 1) * #{cri.amount}
+  ]]>
+</select>
+
+
+  <!-- 게시글에 달린 전체 댓글 수 -->
+  <select id="getCountByBoardid" resultType="int">
+    SELECT COUNT(rno) FROM pd_reply WHERE boardid = #{boardid}
+  </select>
+
+</mapper>

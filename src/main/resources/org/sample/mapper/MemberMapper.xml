@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sample.mapper.MemberMapper">
+
+  <!-- 사용자 정보만 가져오기 -->
+  <resultMap id="memberMap" type="org.sample.domain.MemberVO">
+    <id property="userid" column="userid" />
+    <result property="userpw" column="pwd" />
+    <result property="userName" column="nickname" />
+    <result property="email" column="email" />
+    <!-- <collection property="authList" resultMap="authMap" /> → 제거 -->
+  </resultMap>
+
+  <!-- 🔥 authMap 전체 제거 -->
+
+  <!-- 로그인 시 사용자 조회 (닉네임으로) -->
+  <select id="read" resultType="org.sample.domain.MemberVO">
+    SELECT 
+      userid, nickname, pwd, email
+    FROM pd_user
+    WHERE userid = #{username}
+  </select>
+
+</mapper>
