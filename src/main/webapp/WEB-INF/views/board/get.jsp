@@ -176,6 +176,7 @@
           <label>작성일</label>
           <input class="form-control" name="replyDate" readonly />
         </div>
+        <input type="hidden" name="rno" />
       </div>
       <div class="modal-footer">
         <button id="modalRegisterBtn" type="button" class="btn btn-success">등록</button>
@@ -240,6 +241,16 @@ $(document).ready(function() {
 	        showReplyPage(replyCnt); // 페이지네이션 업데이트
 	    });
 	}
+	 		$("#addReplyBtn").on("click", function () {
+		    $("input[name='reply']").val("");  // 댓글 입력창 초기화
+		    $("input[name='replyer']").val("${sessionScope.loginUser.nickname}"); // 로그인한 사용자
+		    $("input[name='replyDate']").val(new Date().toLocaleString());
+		    $("input[name='rno']").val("");  // 수정이 아닌 등록이므로 rno는 비워둠
+	
+		    $("#modalRegisterBtn").show(); // 등록 버튼 표시
+		    $("#modalModBtn").hide();      // 수정 버튼 숨김
+		    $("#myModal").modal("show");   // 모달 열기
+		});
 
 
     // 댓글 등록 요청
