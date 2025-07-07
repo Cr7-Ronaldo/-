@@ -1,7 +1,7 @@
 # 📦 팔도마켓 (Paldo Market) - 중고거래 웹 플랫폼
 
 > Spring Framework 기반의 중고 물품 거래 게시판 프로젝트입니다.
-> https://youtu.be/aoZpLVaypK8?si=LVqQ22UvnfAVX0tM
+>[![팔도마켓 시연 영상] https://youtu.be/aoZpLVaypK8?si=LVqQ22UvnfAVX0tM
 > 
 ![{233252F2-FC30-4467-9B8D-1957CE8706C0}](https://github.com/user-attachments/assets/84fc74f7-7ce6-41aa-a168-fbeb6a3d0696)
 > ![{CD689DA1-F61E-4BF9-AF81-C4474975A243}](https://github.com/user-attachments/assets/eee0d5e1-5059-49c2-943d-ec7307971007)
